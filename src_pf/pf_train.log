@@ -1,0 +1,1104 @@
+[2023-08-04 16:30:11,661][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2023-08-04 16:30:11,662][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-08-04 16:30:11,669][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-08-04 16:30:11,753][__main__][INFO] - Instantiating datamodule <src_pokeman.data.pokeman_datamodule.PokemanDataModule>
+[2023-08-04 16:30:11,764][__main__][INFO] - Instantiating model <src_pokeman.models.pokeman_module.PokemanLitModule>
+[2023-08-04 16:30:11,785][__main__][INFO] - Instantiating callbacks...
+[2023-08-04 16:30:11,785][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-08-04 16:30:11,791][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-08-04 16:30:11,793][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-08-04 16:30:11,794][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-08-04 16:30:11,796][__main__][INFO] - Instantiating loggers...
+[2023-08-04 16:30:11,796][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-08-04 16:30:39,577][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-08-04 16:30:40,448][__main__][INFO] - Logging hyperparameters!
+[2023-08-04 16:30:40,451][__main__][INFO] - Starting training!
+[2023-08-04 16:30:40,694][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "D:\pycharmproject\template\src\utils\utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "D:\pycharmproject\template\src_pokeman\pokeman_train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 934, in _run
+    call._call_setup_hook(self)  # allow user to setup lightning_module in accelerator environment
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 83, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 164, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pokeman\data\pokeman_datamodule.py", line 67, in setup
+    dataset = torchvision.datasets.ImageFolder(self.hparams.data_dir, transform=self.transforms)
+  File "D:\Anaconda3\lib\site-packages\torchvision\datasets\folder.py", line 309, in __init__
+    super().__init__(
+  File "D:\Anaconda3\lib\site-packages\torchvision\datasets\folder.py", line 144, in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+  File "D:\Anaconda3\lib\site-packages\torchvision\datasets\folder.py", line 218, in find_classes
+    return find_classes(directory)
+  File "D:\Anaconda3\lib\site-packages\torchvision\datasets\folder.py", line 40, in find_classes
+    classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+FileNotFoundError: [WinError 3] 系统找不到指定的路径。: '../../../data/pokeman/'
+[2023-08-04 16:30:40,701][src.utils.utils][INFO] - Output dir: D:\data\pokeman_logs\logs\train\runs\2023-08-04_16-30-11
+[2023-08-04 16:30:40,702][src.utils.utils][INFO] - Closing wandb!
+[2023-08-07 17:13:10,104][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2023-08-07 17:13:10,104][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-08-07 17:13:10,111][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-08-07 17:13:10,212][__main__][INFO] - Instantiating datamodule <src_pokeman.data.pokeman_datamodule.PokemanDataModule>
+[2023-08-07 17:13:10,227][__main__][INFO] - Instantiating model <src_pokeman.models.pokeman_module.PokemanLitModule>
+[2023-08-07 17:13:10,250][__main__][INFO] - Instantiating callbacks...
+[2023-08-07 17:13:10,251][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-08-07 17:13:10,256][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-08-07 17:13:10,258][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-08-07 17:13:10,259][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-08-07 17:13:10,261][__main__][INFO] - Instantiating loggers...
+[2023-08-07 17:13:10,261][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-08-07 17:13:35,361][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-08-07 17:13:36,478][__main__][INFO] - Logging hyperparameters!
+[2023-08-07 17:13:36,485][__main__][INFO] - Starting training!
+[2023-08-07 17:13:36,926][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "D:\pycharmproject\template\src\utils\utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "D:\pycharmproject\template\src_pokeman\pokeman_train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 934, in _run
+    call._call_setup_hook(self)  # allow user to setup lightning_module in accelerator environment
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 83, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 164, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pokeman\data\pokeman_datamodule.py", line 73, in setup
+    self.data_train, self.data_val, self.data_test = random_split(
+  File "D:\Anaconda3\lib\site-packages\torch\utils\data\dataset.py", line 353, in random_split
+    raise ValueError("Sum of input lengths does not equal the length of the input dataset!")
+ValueError: Sum of input lengths does not equal the length of the input dataset!
+[2023-08-07 17:13:36,934][src.utils.utils][INFO] - Output dir: D:\data\pokeman_logs\logs\train\runs\2023-08-07_17-13-09
+[2023-08-07 17:13:36,936][src.utils.utils][INFO] - Closing wandb!
+[2023-08-07 17:15:14,943][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2023-08-07 17:15:14,944][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-08-07 17:15:14,950][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-08-07 17:15:15,019][__main__][INFO] - Instantiating datamodule <src_pokeman.data.pokeman_datamodule.PokemanDataModule>
+[2023-08-07 17:15:15,026][__main__][INFO] - Instantiating model <src_pokeman.models.pokeman_module.PokemanLitModule>
+[2023-08-07 17:15:15,042][__main__][INFO] - Instantiating callbacks...
+[2023-08-07 17:15:15,043][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-08-07 17:15:15,049][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-08-07 17:15:15,050][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-08-07 17:15:15,051][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-08-07 17:15:15,054][__main__][INFO] - Instantiating loggers...
+[2023-08-07 17:15:15,054][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-08-07 17:15:38,944][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-08-07 17:15:40,037][__main__][INFO] - Logging hyperparameters!
+[2023-08-07 17:15:40,040][__main__][INFO] - Starting training!
+[2023-08-07 17:15:40,404][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "D:\pycharmproject\template\src\utils\utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "D:\pycharmproject\template\src_pokeman\pokeman_train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 934, in _run
+    call._call_setup_hook(self)  # allow user to setup lightning_module in accelerator environment
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 83, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 164, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pokeman\data\pokeman_datamodule.py", line 73, in setup
+    self.data_train, self.data_val, self.data_test = random_split(
+  File "D:\Anaconda3\lib\site-packages\torch\utils\data\dataset.py", line 353, in random_split
+    raise ValueError("Sum of input lengths does not equal the length of the input dataset!")
+ValueError: Sum of input lengths does not equal the length of the input dataset!
+[2023-08-07 17:15:40,409][src.utils.utils][INFO] - Output dir: D:\data\pokeman_logs\logs\train\runs\2023-08-07_17-15-14
+[2023-08-07 17:15:40,409][src.utils.utils][INFO] - Closing wandb!
+[2023-08-07 17:19:51,546][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2023-08-07 17:19:51,548][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-08-07 17:19:51,557][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-08-07 17:19:51,699][__main__][INFO] - Instantiating datamodule <src_pokeman.data.pokeman_datamodule.PokemanDataModule>
+[2023-08-07 17:19:51,711][__main__][INFO] - Instantiating model <src_pokeman.models.pokeman_module.PokemanLitModule>
+[2023-08-07 17:19:51,737][__main__][INFO] - Instantiating callbacks...
+[2023-08-07 17:19:51,738][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-08-07 17:19:51,748][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-08-07 17:19:51,752][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-08-07 17:19:51,754][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-08-07 17:19:51,757][__main__][INFO] - Instantiating loggers...
+[2023-08-07 17:19:51,759][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-08-07 17:20:19,073][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-08-07 17:20:19,928][__main__][INFO] - Logging hyperparameters!
+[2023-08-07 17:20:19,933][__main__][INFO] - Starting training!
+[2023-08-07 17:20:20,216][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "D:\pycharmproject\template\src\utils\utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "D:\pycharmproject\template\src_pokeman\pokeman_train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 934, in _run
+    call._call_setup_hook(self)  # allow user to setup lightning_module in accelerator environment
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 83, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 164, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pokeman\data\pokeman_datamodule.py", line 73, in setup
+    self.data_train, self.data_val, self.data_test = random_split(
+  File "D:\Anaconda3\lib\site-packages\torch\utils\data\dataset.py", line 353, in random_split
+    raise ValueError("Sum of input lengths does not equal the length of the input dataset!")
+ValueError: Sum of input lengths does not equal the length of the input dataset!
+[2023-08-07 17:20:20,221][src.utils.utils][INFO] - Output dir: D:\data\pokeman_logs\logs\train\runs\2023-08-07_17-19-51
+[2023-08-07 17:20:20,221][src.utils.utils][INFO] - Closing wandb!
+[2023-08-07 17:37:49,798][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2023-08-07 17:37:49,798][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-08-07 17:37:49,807][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-08-07 17:37:49,892][__main__][INFO] - Instantiating datamodule <src_pokeman.data.pokeman_datamodule.PokemanDataModule>
+[2023-08-07 17:37:49,902][__main__][INFO] - Instantiating model <src_pokeman.models.pokeman_module.PokemanLitModule>
+[2023-08-07 17:37:49,919][__main__][INFO] - Instantiating callbacks...
+[2023-08-07 17:37:49,919][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-08-07 17:37:49,924][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-08-07 17:37:49,926][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-08-07 17:37:49,927][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-08-07 17:37:49,930][__main__][INFO] - Instantiating loggers...
+[2023-08-07 17:37:49,931][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-08-07 17:38:17,405][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-08-07 17:38:18,341][__main__][INFO] - Logging hyperparameters!
+[2023-08-07 17:38:18,344][__main__][INFO] - Starting training!
+[2023-08-07 17:38:18,572][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "D:\pycharmproject\template\src\utils\utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "D:\pycharmproject\template\src_pokeman\pokeman_train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 934, in _run
+    call._call_setup_hook(self)  # allow user to setup lightning_module in accelerator environment
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 83, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 164, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pokeman\data\pokeman_datamodule.py", line 73, in setup
+    self.data_train, self.data_val, self.data_test = random_split(
+  File "D:\Anaconda3\lib\site-packages\torch\utils\data\dataset.py", line 353, in random_split
+    raise ValueError("Sum of input lengths does not equal the length of the input dataset!")
+ValueError: Sum of input lengths does not equal the length of the input dataset!
+[2023-08-07 17:38:18,576][src.utils.utils][INFO] - Output dir: D:\data\pokeman_logs\logs\train\runs\2023-08-07_17-37-49
+[2023-08-07 17:38:18,577][src.utils.utils][INFO] - Closing wandb!
+[2023-08-07 17:45:47,959][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2023-08-07 17:45:47,959][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-08-07 17:45:47,967][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-08-07 17:45:48,038][__main__][INFO] - Instantiating datamodule <src_pokeman.data.pokeman_datamodule.PokemanDataModule>
+[2023-08-07 17:45:48,049][__main__][INFO] - Instantiating model <src_pokeman.models.pokeman_module.PokemanLitModule>
+[2023-08-07 17:45:48,062][__main__][INFO] - Instantiating callbacks...
+[2023-08-07 17:45:48,062][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-08-07 17:45:48,066][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-08-07 17:45:48,067][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-08-07 17:45:48,068][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-08-07 17:45:48,070][__main__][INFO] - Instantiating loggers...
+[2023-08-07 17:45:48,070][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-08-07 17:46:11,022][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-08-07 17:46:11,934][__main__][INFO] - Logging hyperparameters!
+[2023-08-07 17:46:11,936][__main__][INFO] - Starting training!
+[2023-08-07 17:46:12,156][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "D:\pycharmproject\template\src\utils\utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "D:\pycharmproject\template\src_pokeman\pokeman_train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 934, in _run
+    call._call_setup_hook(self)  # allow user to setup lightning_module in accelerator environment
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 83, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 164, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pokeman\data\pokeman_datamodule.py", line 73, in setup
+    self.data_train, self.data_val, self.data_test = random_split(
+  File "D:\Anaconda3\lib\site-packages\torch\utils\data\dataset.py", line 353, in random_split
+    raise ValueError("Sum of input lengths does not equal the length of the input dataset!")
+ValueError: Sum of input lengths does not equal the length of the input dataset!
+[2023-08-07 17:46:12,159][src.utils.utils][INFO] - Output dir: D:\data\pokeman_logs\logs\train\runs\2023-08-07_17-45-47
+[2023-08-07 17:46:12,160][src.utils.utils][INFO] - Closing wandb!
+[2023-08-08 14:49:21,250][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2023-08-08 14:49:21,251][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-08-08 14:49:21,256][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-08-08 14:49:21,353][__main__][INFO] - Instantiating datamodule <src_pokeman.data.pokeman_datamodule.PokemanDataModule>
+[2023-08-08 14:49:21,365][__main__][INFO] - Instantiating model <src_pokeman.models.pokeman_module.PokemanLitModule>
+[2023-08-08 14:49:21,392][__main__][INFO] - Instantiating callbacks...
+[2023-08-08 14:49:21,392][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-08-08 14:49:21,397][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-08-08 14:49:21,399][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-08-08 14:49:21,399][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-08-08 14:49:21,401][__main__][INFO] - Instantiating loggers...
+[2023-08-08 14:49:21,401][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-08-08 14:49:44,089][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-08-08 14:49:44,886][__main__][INFO] - Logging hyperparameters!
+[2023-08-08 14:49:44,889][__main__][INFO] - Starting training!
+[2023-08-08 15:11:59,291][__main__][INFO] - Starting testing!
+[2023-08-08 15:12:03,102][__main__][INFO] - Best ckpt path: D:\data\pokeman_logs\logs\train\runs\2023-08-08_14-49-21\checkpoints\epoch_003.ckpt
+[2023-08-08 15:12:03,111][src.utils.utils][INFO] - Output dir: D:\data\pokeman_logs\logs\train\runs\2023-08-08_14-49-21
+[2023-08-08 15:12:03,112][src.utils.utils][INFO] - Closing wandb!
+[2023-08-08 15:12:34,238][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-11 14:17:40,451][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 14:17:40,451][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 14:17:40,458][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 14:17:40,533][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 14:17:40,544][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 14:17:40,588][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 14:17:40,589][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 14:17:40,593][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 14:17:40,594][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 14:17:40,595][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 14:17:40,597][__main__][INFO] - Instantiating loggers...
+[2024-01-11 14:17:40,598][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 14:18:18,469][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 14:18:19,139][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 14:18:19,142][__main__][INFO] - Starting training!
+[2024-01-11 14:18:28,889][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 1014, in _run_stage
+    self._run_sanity_check()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 1043, in _run_sanity_check
+    val_loop.run()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\utilities.py", line 177, in _decorator
+    return loop_run(self, *args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\evaluation_loop.py", line 115, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\evaluation_loop.py", line 375, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_kwargs.values())
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 291, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\strategies\strategy.py", line 379, in validation_step
+    return self.model.validation_step(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pf\models\pf_module.py", line 92, in validation_step
+    self.val_loss(loss)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torchmetrics\metric.py", line 290, in forward
+    self._forward_cache = self._forward_reduce_state_update(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torchmetrics\metric.py", line 357, in _forward_reduce_state_update
+    self.update(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torchmetrics\metric.py", line 456, in wrapped_func
+    raise err
+  File "D:\Anaconda3\lib\site-packages\torchmetrics\metric.py", line 446, in wrapped_func
+    update(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torchmetrics\aggregation.py", line 519, in update
+    value = self._cast_and_nan_check_input(value)
+  File "D:\Anaconda3\lib\site-packages\torchmetrics\aggregation.py", line 78, in _cast_and_nan_check_input
+    if nans.any():
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pycharmproject\template\src\utils\utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "D:\pycharmproject\template\src_pf\pf_train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 66, in _call_and_handle_interrupt
+    trainer._teardown()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 996, in _teardown
+    self.strategy.teardown()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\strategies\strategy.py", line 476, in teardown
+    self.lightning_module.cpu()
+  File "D:\Anaconda3\lib\site-packages\lightning\fabric\utilities\device_dtype_mixin.py", line 78, in cpu
+    return super().cpu()
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 954, in cpu
+    return self._apply(lambda t: t.cpu())
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 797, in _apply
+    module._apply(fn)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 797, in _apply
+    module._apply(fn)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 820, in _apply
+    param_applied = fn(param)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 954, in <lambda>
+    return self._apply(lambda t: t.cpu())
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[2024-01-11 14:18:28,902][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_14-17-40
+[2024-01-11 14:18:28,903][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 14:22:09,695][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 14:22:09,695][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 14:22:09,702][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 14:22:09,776][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 14:22:09,781][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 14:22:09,795][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 14:22:09,795][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 14:22:09,798][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 14:22:09,800][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 14:22:09,801][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 14:22:09,802][__main__][INFO] - Instantiating loggers...
+[2024-01-11 14:22:09,803][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 14:22:39,923][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 14:22:40,503][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 14:22:40,505][__main__][INFO] - Starting training!
+[2024-01-11 14:25:56,897][__main__][INFO] - Starting testing!
+[2024-01-11 14:26:24,917][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-11_14-22-09\checkpoints\epoch_002.ckpt
+[2024-01-11 14:26:24,919][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_14-22-09
+[2024-01-11 14:26:24,920][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 14:26:40,802][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-11 14:34:07,726][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 14:34:07,727][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 14:34:07,734][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 14:34:07,810][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 14:34:07,815][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 14:34:07,830][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 14:34:07,830][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 14:34:07,836][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 14:34:07,838][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 14:34:07,839][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 14:34:07,840][__main__][INFO] - Instantiating loggers...
+[2024-01-11 14:34:07,840][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 14:34:45,071][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 14:34:45,839][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 14:34:45,842][__main__][INFO] - Starting training!
+[2024-01-11 14:39:01,372][__main__][INFO] - Starting testing!
+[2024-01-11 14:39:28,569][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\multiruns\2024-01-11_14-34-03\0\checkpoints\epoch_002.ckpt
+[2024-01-11 14:39:28,571][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\multiruns\2024-01-11_14-34-03\0
+[2024-01-11 14:39:28,571][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 14:41:25,418][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 14:41:25,419][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 14:41:25,427][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 14:41:25,508][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 14:41:25,513][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 14:41:25,524][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 14:41:25,525][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 14:41:25,529][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 14:41:25,532][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 14:41:25,533][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 14:41:25,534][__main__][INFO] - Instantiating loggers...
+[2024-01-11 14:41:25,534][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 14:42:08,184][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 14:42:08,715][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 14:42:08,719][__main__][INFO] - Starting training!
+[2024-01-11 14:45:35,487][__main__][INFO] - Starting testing!
+[2024-01-11 14:46:04,498][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\multiruns\2024-01-11_14-41-23\0\checkpoints\epoch_000.ckpt
+[2024-01-11 14:46:04,500][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\multiruns\2024-01-11_14-41-23\0
+[2024-01-11 14:46:04,500][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 14:46:17,974][src.utils.utils][INFO] - Retrieved metric value! <val/acc_best=0.590624988079071>
+[2024-01-11 14:46:18,281][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 14:46:18,283][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 14:46:18,286][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 14:46:18,356][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 14:46:18,359][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 14:46:18,369][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 14:46:18,369][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 14:46:18,374][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 14:46:18,375][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 14:46:18,376][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 14:46:18,378][__main__][INFO] - Instantiating loggers...
+[2024-01-11 14:46:18,378][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 14:46:27,013][urllib3.connectionpool][WARNING] - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/4504800232407040/envelope/
+[2024-01-11 14:46:44,561][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 14:46:44,603][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 14:46:44,607][__main__][INFO] - Starting training!
+[2024-01-11 14:58:28,010][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 14:58:28,011][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 14:58:28,017][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 14:58:28,111][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 14:58:28,117][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 14:58:28,130][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 14:58:28,130][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 14:58:28,134][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 14:58:28,135][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 14:58:28,136][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 14:58:28,137][__main__][INFO] - Instantiating loggers...
+[2024-01-11 14:58:28,137][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 14:59:02,963][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_14-58-27
+[2024-01-11 14:59:35,980][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 14:59:35,980][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 14:59:35,988][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 14:59:36,082][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 14:59:36,088][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 14:59:36,101][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 14:59:36,101][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 14:59:36,105][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 14:59:36,107][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 14:59:36,108][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 14:59:36,109][__main__][INFO] - Instantiating loggers...
+[2024-01-11 14:59:36,109][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 15:00:08,420][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 15:00:09,050][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 15:00:09,053][__main__][INFO] - Starting training!
+[2024-01-11 15:03:03,638][__main__][INFO] - Starting testing!
+[2024-01-11 15:03:31,991][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-11_14-59-35\checkpoints\epoch_002.ckpt
+[2024-01-11 15:03:31,993][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_14-59-35
+[2024-01-11 15:03:31,994][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 15:03:47,058][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-11 15:05:58,899][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 15:05:58,900][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 15:05:58,907][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 15:05:58,989][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 15:05:58,994][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 15:05:59,007][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 15:05:59,008][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 15:05:59,011][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 15:05:59,012][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 15:05:59,013][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 15:05:59,013][__main__][INFO] - Instantiating loggers...
+[2024-01-11 15:05:59,015][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 15:06:27,435][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 15:06:28,010][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 15:06:28,013][__main__][INFO] - Starting training!
+[2024-01-11 15:09:03,838][__main__][INFO] - Starting testing!
+[2024-01-11 15:09:28,675][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-11_15-05-58\checkpoints\epoch_002.ckpt
+[2024-01-11 15:09:28,677][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_15-05-58
+[2024-01-11 15:09:28,677][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 15:09:50,075][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-11 15:10:37,402][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 15:10:37,403][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 15:10:37,410][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 15:10:37,490][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 15:10:37,495][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 15:10:37,498][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "D:\Anaconda3\lib\site-packages\hydra\_internal\utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'torch.optim' has no attribute 'AdaGrad'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\lib\site-packages\hydra\_internal\utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "D:\Anaconda3\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'torch.optim.AdaGrad'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda3\lib\site-packages\hydra\_internal\instantiate\_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "D:\Anaconda3\lib\site-packages\hydra\_internal\utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'torch.optim.AdaGrad':
+ModuleNotFoundError("No module named 'torch.optim.AdaGrad'")
+Are you sure that 'AdaGrad' is importable from module 'torch.optim'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\pycharmproject\template\src\utils\utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "D:\pycharmproject\template\src_pf\pf_train.py", line 57, in train
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "D:\Anaconda3\lib\site-packages\hydra\_internal\instantiate\_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "D:\Anaconda3\lib\site-packages\hydra\_internal\instantiate\_instantiate2.py", line 342, in instantiate_node
+    value = instantiate_node(
+  File "D:\Anaconda3\lib\site-packages\hydra\_internal\instantiate\_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "D:\Anaconda3\lib\site-packages\hydra\_internal\instantiate\_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'torch.optim.AdaGrad', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: model.optimizer
+[2024-01-11 15:10:37,500][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_15-10-37
+[2024-01-11 15:11:51,613][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 15:11:51,614][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 15:11:51,620][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 15:11:51,695][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 15:11:51,700][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 15:11:51,710][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 15:11:51,710][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 15:11:51,714][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 15:11:51,715][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 15:11:51,716][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 15:11:51,717][__main__][INFO] - Instantiating loggers...
+[2024-01-11 15:11:51,717][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 15:12:25,192][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 15:12:25,710][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 15:12:25,713][__main__][INFO] - Starting training!
+[2024-01-11 15:14:54,426][__main__][INFO] - Starting testing!
+[2024-01-11 15:15:19,380][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-11_15-11-51\checkpoints\epoch_002.ckpt
+[2024-01-11 15:15:19,381][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_15-11-51
+[2024-01-11 15:15:19,382][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 15:15:38,335][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-11 15:16:36,484][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 15:16:36,485][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 15:16:36,491][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 15:16:36,572][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 15:16:36,578][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 15:16:36,589][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 15:16:36,589][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 15:16:36,593][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 15:16:36,595][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 15:16:36,595][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 15:16:36,597][__main__][INFO] - Instantiating loggers...
+[2024-01-11 15:16:36,597][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 15:17:09,590][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 15:17:10,170][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 15:17:10,172][__main__][INFO] - Starting training!
+[2024-01-11 15:19:39,581][__main__][INFO] - Starting testing!
+[2024-01-11 15:20:06,637][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-11_15-16-36\checkpoints\epoch_001.ckpt
+[2024-01-11 15:20:06,639][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_15-16-36
+[2024-01-11 15:20:06,639][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 15:20:23,066][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-11 15:24:07,254][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 15:24:07,254][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 15:24:07,262][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 15:24:07,351][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 15:24:07,357][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 15:24:07,369][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 15:24:07,369][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 15:24:07,375][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 15:24:07,376][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 15:24:07,377][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 15:24:07,379][__main__][INFO] - Instantiating loggers...
+[2024-01-11 15:24:07,379][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 15:24:41,292][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 15:24:41,868][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 15:24:41,870][__main__][INFO] - Starting training!
+[2024-01-11 15:27:22,770][__main__][INFO] - Starting testing!
+[2024-01-11 15:27:50,576][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-11_15-24-07\checkpoints\epoch_000.ckpt
+[2024-01-11 15:27:50,577][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_15-24-07
+[2024-01-11 15:27:50,578][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 15:28:03,775][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-11 15:28:25,371][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 15:28:25,371][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 15:28:25,379][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 15:28:25,458][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 15:28:25,464][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 15:28:25,476][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 15:28:25,477][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 15:28:25,481][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 15:28:25,483][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 15:28:25,483][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 15:28:25,484][__main__][INFO] - Instantiating loggers...
+[2024-01-11 15:28:25,485][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 15:28:59,380][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 15:28:59,973][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 15:28:59,975][__main__][INFO] - Starting training!
+[2024-01-11 15:31:54,850][__main__][INFO] - Starting testing!
+[2024-01-11 15:32:23,790][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-11_15-28-25\checkpoints\epoch_002.ckpt
+[2024-01-11 15:32:23,792][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_15-28-25
+[2024-01-11 15:32:23,792][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 15:32:46,436][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-11 15:37:31,576][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 15:37:31,576][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 15:37:31,583][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 15:37:31,669][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 15:37:31,674][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 15:37:31,726][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 15:37:31,726][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 15:37:31,730][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 15:37:31,732][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 15:37:31,732][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 15:37:31,734][__main__][INFO] - Instantiating loggers...
+[2024-01-11 15:37:31,734][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 15:37:59,758][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 15:38:00,338][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 15:38:00,342][__main__][INFO] - Starting training!
+[2024-01-11 15:39:50,658][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "D:\pycharmproject\template\src\utils\utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "D:\pycharmproject\template\src_pf\pf_train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 1014, in _run_stage
+    self._run_sanity_check()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 1043, in _run_sanity_check
+    val_loop.run()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\utilities.py", line 177, in _decorator
+    return loop_run(self, *args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\evaluation_loop.py", line 115, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\evaluation_loop.py", line 375, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_kwargs.values())
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 291, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\strategies\strategy.py", line 379, in validation_step
+    return self.model.validation_step(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pf\models\pf_module.py", line 93, in validation_step
+    loss, preds, targets = self.model_step(batch)
+  File "D:\pycharmproject\template\src_pf\models\pf_module.py", line 68, in model_step
+    logits = self.forward(x)
+  File "D:\pycharmproject\template\src_pf\models\pf_module.py", line 57, in forward
+    return self.net(x)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pf\models\components\mobilenetv1.py", line 60, in forward
+    x = self.dw_separable_conv13(x)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pf\models\components\mobilenetv1.py", line 15, in forward
+    x = self.pointwise_conv(x)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.12 GiB (GPU 0; 2.00 GiB total capacity; 6.30 GiB already allocated; 0 bytes free; 6.31 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+[2024-01-11 15:39:50,675][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_15-37-31
+[2024-01-11 15:39:50,675][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 15:42:37,418][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 15:42:37,419][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 15:42:37,426][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 15:42:37,503][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 15:42:37,511][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 15:42:37,565][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 15:42:37,566][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 15:42:37,569][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 15:42:37,571][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 15:42:37,571][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 15:42:37,573][__main__][INFO] - Instantiating loggers...
+[2024-01-11 15:42:37,573][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 15:43:24,365][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 15:43:25,137][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 15:43:25,141][__main__][INFO] - Starting training!
+[2024-01-11 15:45:43,621][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "D:\pycharmproject\template\src\utils\utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "D:\pycharmproject\template\src_pf\pf_train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 1016, in _run_stage
+    self.fit_loop.run()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\fit_loop.py", line 201, in run
+    self.advance()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\fit_loop.py", line 354, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\training_epoch_loop.py", line 133, in run
+    self.advance(data_fetcher)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\training_epoch_loop.py", line 218, in advance
+    batch_output = self.automatic_optimization.run(trainer.optimizers[0], kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\optimization\automatic.py", line 185, in run
+    self._optimizer_step(kwargs.get("batch_idx", 0), closure)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\optimization\automatic.py", line 260, in _optimizer_step
+    call._call_lightning_module_hook(
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 144, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\core\module.py", line 1256, in optimizer_step
+    optimizer.step(closure=optimizer_closure)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\core\optimizer.py", line 155, in step
+    step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\strategies\strategy.py", line 225, in optimizer_step
+    return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\plugins\precision\precision_plugin.py", line 114, in optimizer_step
+    return optimizer.step(closure=closure, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torch\optim\optimizer.py", line 280, in wrapper
+    out = func(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torch\optim\optimizer.py", line 33, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torch\optim\rmsprop.py", line 107, in step
+    loss = closure()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\plugins\precision\precision_plugin.py", line 101, in _wrap_closure
+    closure_result = closure()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\optimization\automatic.py", line 140, in __call__
+    self._result = self.closure(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\optimization\automatic.py", line 126, in closure
+    step_output = self._step_fn()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\optimization\automatic.py", line 307, in _training_step
+    training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 291, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\strategies\strategy.py", line 367, in training_step
+    return self.model.training_step(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pf\models\pf_module.py", line 74, in training_step
+    loss, preds, targets = self.model_step(batch)
+  File "D:\pycharmproject\template\src_pf\models\pf_module.py", line 68, in model_step
+    logits = self.forward(x)
+  File "D:\pycharmproject\template\src_pf\models\pf_module.py", line 57, in forward
+    return self.net(x)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pf\models\components\mobilenetv1.py", line 56, in forward
+    x = self.dw_separable_conv9(x)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pf\models\components\mobilenetv1.py", line 14, in forward
+    x = self.depthwise_conv(x)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 614.00 MiB (GPU 0; 2.00 GiB total capacity; 7.82 GiB already allocated; 0 bytes free; 8.22 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+[2024-01-11 15:45:43,653][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_15-42-37
+[2024-01-11 15:45:43,654][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 15:47:05,851][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-11 15:47:05,852][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-11 15:47:05,867][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-11 15:47:06,046][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-11 15:47:06,057][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-11 15:47:06,119][__main__][INFO] - Instantiating callbacks...
+[2024-01-11 15:47:06,119][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-11 15:47:06,124][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-11 15:47:06,127][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-11 15:47:06,129][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-11 15:47:06,130][__main__][INFO] - Instantiating loggers...
+[2024-01-11 15:47:06,131][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-11 15:47:41,874][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-11 15:47:42,479][__main__][INFO] - Logging hyperparameters!
+[2024-01-11 15:47:42,482][__main__][INFO] - Starting training!
+[2024-01-11 15:57:26,582][__main__][INFO] - Starting testing!
+[2024-01-11 15:58:09,684][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-11_15-47-05\checkpoints\epoch_000.ckpt
+[2024-01-11 15:58:09,687][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-11_15-47-05
+[2024-01-11 15:58:09,687][src.utils.utils][INFO] - Closing wandb!
+[2024-01-11 15:58:32,248][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-12 14:01:03,575][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-12 14:01:03,576][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-12 14:01:03,583][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-12 14:01:03,692][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-12 14:01:03,702][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-12 14:01:03,870][__main__][INFO] - Instantiating callbacks...
+[2024-01-12 14:01:03,871][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-12 14:01:03,879][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-12 14:01:03,882][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-12 14:01:03,883][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-12 14:01:03,886][__main__][INFO] - Instantiating loggers...
+[2024-01-12 14:01:03,887][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-12 14:02:01,233][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-12 14:02:01,882][__main__][INFO] - Logging hyperparameters!
+[2024-01-12 14:02:01,887][__main__][INFO] - Starting training!
+[2024-01-12 14:09:31,872][__main__][INFO] - Starting testing!
+[2024-01-12 14:10:05,853][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-12_14-01-03\checkpoints\epoch_000.ckpt
+[2024-01-12 14:10:05,855][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-12_14-01-03
+[2024-01-12 14:10:05,856][src.utils.utils][INFO] - Closing wandb!
+[2024-01-12 14:10:29,971][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-12 14:12:33,308][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-12 14:12:33,310][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-12 14:12:33,316][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-12 14:12:33,403][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-12 14:12:33,410][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-12 14:12:33,553][__main__][INFO] - Instantiating callbacks...
+[2024-01-12 14:12:33,553][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-12 14:12:33,560][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-12 14:12:33,562][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-12 14:12:33,563][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-12 14:12:33,565][__main__][INFO] - Instantiating loggers...
+[2024-01-12 14:12:33,565][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-12 14:13:10,563][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-12 14:13:11,185][__main__][INFO] - Logging hyperparameters!
+[2024-01-12 14:13:11,190][__main__][INFO] - Starting training!
+[2024-01-12 14:13:19,121][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "D:\pycharmproject\template\src\utils\utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "D:\pycharmproject\template\src_pf\pf_train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\trainer.py", line 1016, in _run_stage
+    self.fit_loop.run()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\fit_loop.py", line 201, in run
+    self.advance()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\fit_loop.py", line 354, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\training_epoch_loop.py", line 133, in run
+    self.advance(data_fetcher)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\training_epoch_loop.py", line 218, in advance
+    batch_output = self.automatic_optimization.run(trainer.optimizers[0], kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\optimization\automatic.py", line 185, in run
+    self._optimizer_step(kwargs.get("batch_idx", 0), closure)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\optimization\automatic.py", line 260, in _optimizer_step
+    call._call_lightning_module_hook(
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 144, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\core\module.py", line 1256, in optimizer_step
+    optimizer.step(closure=optimizer_closure)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\core\optimizer.py", line 155, in step
+    step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\strategies\strategy.py", line 225, in optimizer_step
+    return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\plugins\precision\precision_plugin.py", line 114, in optimizer_step
+    return optimizer.step(closure=closure, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torch\optim\optimizer.py", line 280, in wrapper
+    out = func(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torch\optim\optimizer.py", line 33, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torch\optim\adam.py", line 121, in step
+    loss = closure()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\plugins\precision\precision_plugin.py", line 101, in _wrap_closure
+    closure_result = closure()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\optimization\automatic.py", line 140, in __call__
+    self._result = self.closure(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\optimization\automatic.py", line 126, in closure
+    step_output = self._step_fn()
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\loops\optimization\automatic.py", line 307, in _training_step
+    training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\trainer\call.py", line 291, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\lightning\pytorch\strategies\strategy.py", line 367, in training_step
+    return self.model.training_step(*args, **kwargs)
+  File "D:\pycharmproject\template\src_pf\models\pf_module.py", line 78, in training_step
+    self.train_acc(preds, targets)
+  File "D:\Anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torchmetrics\metric.py", line 290, in forward
+    self._forward_cache = self._forward_reduce_state_update(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torchmetrics\metric.py", line 357, in _forward_reduce_state_update
+    self.update(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torchmetrics\metric.py", line 456, in wrapped_func
+    raise err
+  File "D:\Anaconda3\lib\site-packages\torchmetrics\metric.py", line 446, in wrapped_func
+    update(*args, **kwargs)
+  File "D:\Anaconda3\lib\site-packages\torchmetrics\classification\stat_scores.py", line 314, in update
+    _multiclass_stat_scores_tensor_validation(
+  File "D:\Anaconda3\lib\site-packages\torchmetrics\functional\classification\stat_scores.py", line 313, in _multiclass_stat_scores_tensor_validation
+    raise RuntimeError(
+RuntimeError: Detected more unique values in `preds` than `num_classes`. Expected only 10 but found 11 in `preds`.
+[2024-01-12 14:13:19,150][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-12_14-12-33
+[2024-01-12 14:13:19,152][src.utils.utils][INFO] - Closing wandb!
+[2024-01-12 14:17:56,896][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-12 14:17:56,897][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-12 14:17:56,904][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-12 14:17:56,970][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-12 14:17:56,975][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-12 14:17:57,077][__main__][INFO] - Instantiating callbacks...
+[2024-01-12 14:17:57,078][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-12 14:17:57,081][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-12 14:17:57,083][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-12 14:17:57,084][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-12 14:17:57,085][__main__][INFO] - Instantiating loggers...
+[2024-01-12 14:17:57,085][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-12 14:18:32,672][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-12 14:18:33,252][__main__][INFO] - Logging hyperparameters!
+[2024-01-12 14:18:33,257][__main__][INFO] - Starting training!
+[2024-01-12 14:25:38,495][__main__][INFO] - Starting testing!
+[2024-01-12 14:26:04,987][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-12_14-17-56\checkpoints\epoch_002.ckpt
+[2024-01-12 14:26:04,989][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-12_14-17-56
+[2024-01-12 14:26:04,989][src.utils.utils][INFO] - Closing wandb!
+[2024-01-12 14:26:27,154][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-12 14:27:05,482][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-12 14:27:05,483][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-12 14:27:05,489][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-12 14:27:05,577][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-12 14:27:05,582][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-12 14:27:05,680][__main__][INFO] - Instantiating callbacks...
+[2024-01-12 14:27:05,681][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-12 14:27:05,685][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-12 14:27:05,688][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-12 14:27:05,688][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-12 14:27:05,689][__main__][INFO] - Instantiating loggers...
+[2024-01-12 14:27:05,690][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-12 14:27:46,452][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-12 14:27:47,085][__main__][INFO] - Logging hyperparameters!
+[2024-01-12 14:27:47,090][__main__][INFO] - Starting training!
+[2024-01-12 14:34:21,654][__main__][INFO] - Starting testing!
+[2024-01-12 14:34:46,520][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-12_14-27-05\checkpoints\epoch_001.ckpt
+[2024-01-12 14:34:46,523][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-12_14-27-05
+[2024-01-12 14:34:46,524][src.utils.utils][INFO] - Closing wandb!
+[2024-01-12 14:35:14,306][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-12 14:35:47,092][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-12 14:35:47,093][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-12 14:35:47,099][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-12 14:35:47,188][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-12 14:35:47,194][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-12 14:35:47,294][__main__][INFO] - Instantiating callbacks...
+[2024-01-12 14:35:47,294][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-12 14:35:47,298][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-12 14:35:47,300][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-12 14:35:47,300][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-12 14:35:47,301][__main__][INFO] - Instantiating loggers...
+[2024-01-12 14:35:47,301][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-12 14:36:44,321][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-12 14:36:44,915][__main__][INFO] - Logging hyperparameters!
+[2024-01-12 14:36:44,920][__main__][INFO] - Starting training!
+[2024-01-12 14:43:46,566][__main__][INFO] - Starting testing!
+[2024-01-12 14:44:12,484][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-12_14-35-46\checkpoints\epoch_000.ckpt
+[2024-01-12 14:44:12,486][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-12_14-35-46
+[2024-01-12 14:44:12,486][src.utils.utils][INFO] - Closing wandb!
+[2024-01-12 14:44:40,779][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-12 14:45:05,092][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-12 14:45:05,092][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-12 14:45:05,099][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-12 14:45:05,191][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-12 14:45:05,196][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-12 14:45:05,294][__main__][INFO] - Instantiating callbacks...
+[2024-01-12 14:45:05,294][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-12 14:45:05,298][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-12 14:45:05,299][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-12 14:45:05,300][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-12 14:45:05,301][__main__][INFO] - Instantiating loggers...
+[2024-01-12 14:45:05,301][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-12 14:45:43,706][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-12 14:45:44,305][__main__][INFO] - Logging hyperparameters!
+[2024-01-12 14:45:44,310][__main__][INFO] - Starting training!
+[2024-01-12 14:52:12,330][__main__][INFO] - Starting testing!
+[2024-01-12 14:52:38,566][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-12_14-45-04\checkpoints\epoch_000.ckpt
+[2024-01-12 14:52:38,568][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-12_14-45-04
+[2024-01-12 14:52:38,569][src.utils.utils][INFO] - Closing wandb!
+[2024-01-12 14:53:03,617][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-17 14:43:41,691][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-17 14:43:41,692][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-17 14:43:41,700][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-17 14:43:41,779][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-17 14:43:41,786][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-17 14:43:41,918][__main__][INFO] - Instantiating callbacks...
+[2024-01-17 14:43:41,919][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-17 14:43:41,925][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-17 14:43:41,927][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-17 14:43:41,927][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-17 14:43:41,929][__main__][INFO] - Instantiating loggers...
+[2024-01-17 14:43:41,930][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-17 14:44:16,541][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-17 14:44:17,244][__main__][INFO] - Logging hyperparameters!
+[2024-01-17 14:44:17,252][__main__][INFO] - Starting training!
+[2024-01-17 14:45:01,797][__main__][INFO] - Starting testing!
+[2024-01-17 14:45:21,481][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-17_14-43-41\checkpoints\epoch_000.ckpt
+[2024-01-17 14:45:21,482][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-17_14-43-41
+[2024-01-17 14:45:21,483][src.utils.utils][INFO] - Closing wandb!
+[2024-01-17 14:46:01,987][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-17 14:47:07,512][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-17 14:47:07,512][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-17 14:47:07,520][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-17 14:47:07,651][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-17 14:47:07,661][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-17 14:47:07,756][__main__][INFO] - Instantiating callbacks...
+[2024-01-17 14:47:07,756][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-17 14:47:07,762][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-17 14:47:07,765][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-17 14:47:07,766][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-17 14:47:07,767][__main__][INFO] - Instantiating loggers...
+[2024-01-17 14:47:07,768][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-17 14:47:43,775][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-17 14:47:44,252][__main__][INFO] - Logging hyperparameters!
+[2024-01-17 14:47:44,257][__main__][INFO] - Starting training!
+[2024-01-17 14:48:23,679][__main__][INFO] - Starting testing!
+[2024-01-17 14:48:43,383][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-17_14-47-07\checkpoints\epoch_001.ckpt
+[2024-01-17 14:48:43,385][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-17_14-47-07
+[2024-01-17 14:48:43,385][src.utils.utils][INFO] - Closing wandb!
+[2024-01-17 14:49:01,994][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-17 14:49:34,248][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-17 14:49:34,249][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-17 14:49:34,255][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-17 14:49:34,331][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-17 14:49:34,336][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-17 14:49:34,403][__main__][INFO] - Instantiating callbacks...
+[2024-01-17 14:49:34,404][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-17 14:49:34,407][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-17 14:49:34,408][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-17 14:49:34,409][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-17 14:49:34,410][__main__][INFO] - Instantiating loggers...
+[2024-01-17 14:49:34,410][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-17 14:50:36,781][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-17 14:50:37,495][__main__][INFO] - Logging hyperparameters!
+[2024-01-17 14:50:37,500][__main__][INFO] - Starting training!
+[2024-01-17 14:51:20,186][__main__][INFO] - Starting testing!
+[2024-01-17 14:51:38,938][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-17_14-49-34\checkpoints\epoch_002.ckpt
+[2024-01-17 14:51:38,940][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-17_14-49-34
+[2024-01-17 14:51:38,940][src.utils.utils][INFO] - Closing wandb!
+[2024-01-17 14:52:04,271][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-17 14:52:19,814][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-17 14:52:19,814][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-17 14:52:19,821][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-17 14:52:19,891][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-17 14:52:19,896][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-17 14:52:19,961][__main__][INFO] - Instantiating callbacks...
+[2024-01-17 14:52:19,961][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-17 14:52:19,965][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-17 14:52:19,966][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-17 14:52:19,967][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-17 14:52:19,968][__main__][INFO] - Instantiating loggers...
+[2024-01-17 14:52:19,968][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-17 14:52:54,751][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-17 14:52:55,381][__main__][INFO] - Logging hyperparameters!
+[2024-01-17 14:52:55,386][__main__][INFO] - Starting training!
+[2024-01-17 14:53:42,816][__main__][INFO] - Starting testing!
+[2024-01-17 14:54:04,635][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-17_14-52-19\checkpoints\epoch_002.ckpt
+[2024-01-17 14:54:04,636][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-17_14-52-19
+[2024-01-17 14:54:04,637][src.utils.utils][INFO] - Closing wandb!
+[2024-01-17 14:54:28,278][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-01-17 14:54:41,012][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-01-17 14:54:41,013][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-01-17 14:54:41,020][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-01-17 14:54:41,113][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-01-17 14:54:41,118][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-01-17 14:54:41,195][__main__][INFO] - Instantiating callbacks...
+[2024-01-17 14:54:41,195][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-01-17 14:54:41,200][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-01-17 14:54:41,201][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-01-17 14:54:41,202][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-01-17 14:54:41,203][__main__][INFO] - Instantiating loggers...
+[2024-01-17 14:54:41,203][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-01-17 14:55:12,376][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-01-17 14:55:13,002][__main__][INFO] - Logging hyperparameters!
+[2024-01-17 14:55:13,007][__main__][INFO] - Starting training!
+[2024-01-17 14:56:01,467][__main__][INFO] - Starting testing!
+[2024-01-17 14:56:25,508][__main__][INFO] - Best ckpt path: D:\data\pf_logs\logs\train\runs\2024-01-17_14-54-40\checkpoints\epoch_002.ckpt
+[2024-01-17 14:56:25,512][src.utils.utils][INFO] - Output dir: D:\data\pf_logs\logs\train\runs\2024-01-17_14-54-40
+[2024-01-17 14:56:25,513][src.utils.utils][INFO] - Closing wandb!
+[2024-01-17 14:56:49,297][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2024-03-29 21:21:07,296][src.utils.utils][INFO] - Disabling python warnings! <cfg.extras.ignore_warnings=True>
+[2024-03-29 21:21:07,297][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-03-29 21:21:07,303][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-03-29 21:21:07,375][__main__][INFO] - Instantiating datamodule <src_pf.data.pf_datamodule.pfDataModule>
+[2024-03-29 21:21:07,382][__main__][INFO] - Instantiating model <src_pf.models.pf_module.pfLitModule>
+[2024-03-29 21:21:07,476][__main__][INFO] - Instantiating callbacks...
+[2024-03-29 21:21:07,476][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2024-03-29 21:21:07,481][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2024-03-29 21:21:07,483][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2024-03-29 21:21:07,483][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2024-03-29 21:21:07,485][__main__][INFO] - Instantiating loggers...
+[2024-03-29 21:21:07,485][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2024-03-29 21:21:38,589][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2024-03-29 21:21:39,710][__main__][INFO] - Logging hyperparameters!
+[2024-03-29 21:21:39,714][__main__][INFO] - Starting training!

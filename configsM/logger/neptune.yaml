@@ -1,0 +1,11 @@
+# https://neptune.ai
+
+neptune:
+  _target_: lightning.pytorch.loggers.neptune.NeptuneLogger
+
+#  api_key: ${oc.env:NEPTUNE_API_TOKEN} # api key is loaded from environment variable
+  api_key: eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJhcGlfdXJsIjoiaHR0cHM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiIxNGEwOWZhYS1iM2IwLTQ3ZjItYmE2MS02ZjVjOTNjMTcyZDcifQ==
+  project: shao1chuan/lightning-hydra-template
+  # name: ""
+  log_model_checkpoints: True
+  prefix: ""

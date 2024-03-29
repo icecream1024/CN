@@ -1,0 +1,50 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.10.7",
+    "heartbeatAt": "2023-08-03T03:46:31.728246",
+    "startedAt": "2023-08-03T03:46:29.413438",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "E:\\pycharmproject\\lighting-hybra-templete2\\srcM\\test.py",
+    "codePath": "srcM\\test.py",
+    "git": {
+        "remote": "https://github.com/ashleve/lightning-hydra-template.git",
+        "commit": "80558981d32833f222586655a24723bffee7a729"
+    },
+    "email": "4448445@qq.com",
+    "root": "E:/pycharmproject/lighting-hybra-templete2",
+    "host": "DESKTOP-IHUKAET",
+    "username": "44484",
+    "executable": "E:\\pycharmproject\\lightning-hydra-template\\venv\\Scripts\\python.exe",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3600.0,
+        "min": 0.0,
+        "max": 3600.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3600.0,
+            "min": 0.0,
+            "max": 3600.0
+        }
+    ],
+    "disk": {
+        "total": 3726.0058555603027,
+        "used": 434.1923522949219
+    },
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 2080 Ti",
+            "memory_total": 11811160064
+        }
+    ],
+    "memory": {
+        "total": 31.833560943603516
+    }
+}

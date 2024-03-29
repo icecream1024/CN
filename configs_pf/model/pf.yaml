@@ -1,0 +1,27 @@
+_target_: src_pf.models.pf_module.pfLitModule
+
+optimizer:
+#  _target_: torch.optim.SGD
+#  _target_: torch.optim.Adam
+#  _target_: torch.optim.NAdam
+#  _target_: torch.optim.Adagrad
+  _target_: torch.optim.RMSprop
+  _partial_: true
+  lr: 0.01
+  weight_decay: 0.0
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+  factor: 0.1
+  patience: 10
+
+net:
+#  _target_: src_pf.models.components.mobilenetv2.MobileNetV2
+  _target_: src_pf.models.components.shufflenetv2.ShuffleNetV2
+#  input_size: 784
+#  lin1_size: 64
+#  lin2_size: 128
+#  lin3_size: 64
+#  output_size: 5

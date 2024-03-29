@@ -1,0 +1,27 @@
+_target_: srcM.models.mnist_module.MNISTLitModule
+
+optimizer:
+#  _target_: torch.optim.Adam
+#  _target_: torch.optim.SGD
+#  _target_: torch.optim.Adagrad
+#  _target_: srcM.optim.Optimizer.CustomAdam
+  _target_: srcM.optim.Optimizer.CLRAdam
+  _partial_: true
+  lr: 0.001
+#  lr: 0.0001
+  weight_decay: 0.0
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+  factor: 0.1
+  patience: 10
+
+net:
+  _target_: srcM.models.components.simple_dense_net.SimpleDenseNet
+  input_size: 784
+  lin1_size: 256
+  lin2_size: 64
+  lin3_size: 256
+  output_size: 10
